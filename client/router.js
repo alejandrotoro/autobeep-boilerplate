@@ -1,9 +1,9 @@
 import React from 'react'
-import { Route, IndexRoute } from 'react-router'
+import { Router, Route, IndexRoute } from 'react-router';
 import App from './components/App';
 // import Register from './Register'
-// import Venues from './Venues'
-// import Venue from './Venue'
+import VenuesContainer from './components/VenuesContainer'
+import Venue from './components/Venue'
 import Login from './components/Login'
 
 import { Provider } from 'react-redux';
@@ -14,9 +14,9 @@ module.exports = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Login}/>
-        // <Route path="/venues" component={Venues}>
-          // <Route path="/venues/:venueId" component={Venue}/>
-        // </Route>
+        <Route path="/venues" component={VenuesContainer}>
+          <Route path="/venues/:venueId" component={Venue}/>
+        </Route>
       </Route>
     </Router>
   </Provider>
