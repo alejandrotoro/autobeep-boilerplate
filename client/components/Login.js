@@ -1,7 +1,6 @@
 import React from 'react'
-import axios from 'axios'
 import { browserHistory } from 'react-router'
-import constants from './ComponentConstants'
+import constants from './constants'
 
 const api_rul = constants.API.API_URL;
 
@@ -27,17 +26,32 @@ const LoginForm = React.createClass({
       return;
     }
 
-    axios.post( api_rul + 'admins/authenticate', {
-      email: email,
-      password: password
-    })
-    .then(function (data) {
-      constants.AUTH.token = data.data.access_token;
-      browserHistory.push('/venues');
-    })
-    .catch(function (error) {
-      console.log(error);
-      // this.context.router.push('/');
+    // axios.post( api_rul + 'admins/authenticate', {
+    //   email: email,
+    //   password: password
+    // })
+    // .then(function (data) {
+    //   constants.AUTH.token = data.data.access_token;
+    //   browserHistory.push('/venues');
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    //   // this.context.router.push('/');
+    // });
+    $.ajax({
+      url:  api_rul + 'admins/authenticate',
+      dataType: 'json',
+      type: 'POST',
+      cache: false,
+      data: {email: email, password: password},
+      success: function(data) {
+        constants.AUTH.token = data.data.access_token;
+        browserHistory.push('/venues');
+        // this.setState({data: data.carlist});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(`${api_rul}admins/authenticate`, status, err.toString());
+      }.bind(this)
     });
 
   },

@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
 // import rootReducer from './reducers/index';
-// import config from './data/config';
+import config from './data/config';
 
 const loggerMiddleware = createLogger();
 
@@ -13,7 +13,6 @@ const loggerMiddleware = createLogger();
 const defaultSate = { config, domains: [] };
 
 const store = createStore(
-  rootReducer,
   defaultSate,
   applyMiddleware(thunk, loggerMiddleware)
 );
