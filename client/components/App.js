@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, cloneElement } from 'react';
 import { Link } from 'react-router'
 import NavLink from './NavLink'
 import Login from './Login'
@@ -14,7 +14,7 @@ const App = (props) => {
           <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
         </ul>
       </div>
-      {props.children || <Login/>}
+      {cloneElement(props.children || <Login/>, props)}
     </div>
   );
 }

@@ -32,7 +32,6 @@ const LoginForm = React.createClass({
       success: function(data) {
         constants.AUTH.token = data.access_token;
         this.setState({token: data.access_token});
-        console.log("this.state: ", this.state);
         browserHistory.push('/venues');
       }.bind(this),
       error: function(xhr, status, err) {

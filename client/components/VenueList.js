@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react'
 import Venue from './Venue'
 
-const VenueList = ({ venues, onEditClick }) => (
+// const VenueList = ({ venues, onEditClick }) => (
+const VenueList = ({ venues }) => (
   <div>
     <h2>Lugares</h2>
     <ul>
@@ -9,7 +10,7 @@ const VenueList = ({ venues, onEditClick }) => (
         <Venue
           key={venue.id}
           {...venue}
-          onClick={() => onEditClick(venue.id)}
+          // onClick={() => onEditClick(venue.id)}
         />
       )}
     </ul>
@@ -22,8 +23,8 @@ VenueList.propTypes = {
     name: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
     phonenumber: PropTypes.string.isRequired
-  }).isRequired).isRequired,
-  onEditClick: PropTypes.func.isRequired
+  }).isRequired).isRequired
+  // onEditClick: PropTypes.func.isRequired
 }
 
 export default VenueList

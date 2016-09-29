@@ -9,13 +9,15 @@ import Login from './components/Login'
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
+console.log('store: ', JSON.stringify(store));
+
 module.exports = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Login}/>
         <Route path="/venues" component={VenuesContainer}>
-          <Route path="/venues/:venueId" component={Venue}/>
+          /* <Route path="/venues/:venueId" component={Venue}/> */
         </Route>
       </Route>
     </Router>

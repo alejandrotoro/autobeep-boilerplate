@@ -1,4 +1,4 @@
-# KOMMIT WebPack Boilerplate
+# Based on KOMMIT WebPack Boilerplate
 
 That includes:
 
