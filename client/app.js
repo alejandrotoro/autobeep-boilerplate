@@ -1,6 +1,11 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, browserHistory } from 'react-router'
+// import routes and pass them into <Router/>
+import routes from './router'
 
-import css from './styles/main.sass';
+const router = (
+  <Router routes={routes} history={browserHistory}/>
+);
 
-render(<h1>Hello</h1>, document.getElementById('root'));
+render(router, document.getElementById('root'));
