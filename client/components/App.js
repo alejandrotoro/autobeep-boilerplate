@@ -5,8 +5,8 @@ import Login from './Login'
 
 const App = (props) => {
   return (
-    <div className=''>
-      <div className="navbar navbar-default navbar-fixed-top">
+    <div className='wrapper'>
+      <div className="navbar navbar-default">
         <div className='container'>
           <div className="navbar-header">
             <Link to='/' className="navbar-brand">Autobeep</Link>
@@ -23,6 +23,7 @@ const App = (props) => {
       <div className='container margin-header'>
         {cloneElement(props.children || <Login/>, props)}
       </div>
+      <div className='footer container'></div>
     </div>
   );
 }

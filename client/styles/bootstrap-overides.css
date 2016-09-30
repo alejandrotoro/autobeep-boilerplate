@@ -1,0 +1,20 @@
+.wrapper {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+.footer {
+    background-color: #006699;
+    background-image: url(https://res.cloudinary.com/siete-cumbres-sas/image/upload/v1475272134/Elementos-Graficos-Autobeep_uyw2sf.png);
+    height: 170px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 40%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

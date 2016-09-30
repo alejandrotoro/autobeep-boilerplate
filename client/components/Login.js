@@ -71,6 +71,7 @@ const LoginForm = React.createClass({
           </fieldset>
         </form>
       </div>
+      
     )
   }
 });

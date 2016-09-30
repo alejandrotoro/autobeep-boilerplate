@@ -19,6 +19,8 @@ html {
 }
 body {
   margin: 0;
+  color: #fff;
+  background: #0d98c9;
 }
 article,
 aside,
@@ -7019,10 +7021,4 @@ a.list-group-item-danger.active:focus {
 }
 .popover {
   color: #2c3e50;
-}
-
-/* Hacks */
-.margin-header {
-    position: relative;
-    top: 100px;
 }
