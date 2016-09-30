@@ -13,17 +13,10 @@ class VenuesContainer extends Component {
     dispatch(fetchVenuesIfNeeded())
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const { dispatch } = nextProps
-  //   dispatch(fetchVenuesIfNeeded())
-  // }
-
   render() {
     const { venues, isFetching, lastUpdated } = this.props
     return (
       <div>
-        <p>{venues.length}</p>
-        <p>{isFetching}</p>
         {isFetching && venues.length === 0 &&
           <h2>Loading...</h2>
         }
@@ -31,7 +24,7 @@ class VenuesContainer extends Component {
           <h2>Empty.</h2>
         }
         {venues.length > 0 &&
-          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+          <div>
             <Venues venues={venues} />
           </div>
         }
@@ -51,7 +44,7 @@ function mapStateToProps(state) {
   const { getVenues } = state;
   const venues = state.venues;
   const { isFetching, lastUpdated } = getVenues || { isFetching: true, lastUpdated: Date.now() };
-  
+
   return {
     venues,
     isFetching,

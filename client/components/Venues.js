@@ -6,7 +6,11 @@ export default class Venues extends Component {
     return (
       <ul>
         {this.props.venues.map((venue, i) =>
-          <li key={i}>{venue.name}</li>
+          <div key={i}>
+            <h2>{venue.name}</h2>
+            <p>{venue.address}</p>
+            <p>{venue.phonenumber}</p>
+          </div>
         )}
       </ul>
     )
