@@ -4,16 +4,13 @@ import createLogger from 'redux-logger';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
-import rootReducer from './reducers/index';
+import rootReducer from './reducers';
+
+import { fetchVenuesIfNeeded } from './actions'
 
 const loggerMiddleware = createLogger();
 
-// const email = '';
-// const password = '';
-// const token = '';
-// create an object for the default data
-// const defaultSate = { email, password, token, venues: [] };
-const defaultSate = {};
+const defaultSate = { venues: [] };
 
 const store = createStore(
   rootReducer,

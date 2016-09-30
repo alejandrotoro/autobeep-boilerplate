@@ -1,57 +1,62 @@
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import * as actions from '../actions'
-import { bindActionCreators } from 'redux';
-import VenueList from './VenueList'
-import { browserHistory } from 'react-router'
-import constants from './constants'
+import { fetchVenuesIfNeeded } from '../actions'
+import Venues from './Venues'
 
-const getVenues = (venues) => {
-  const api_rul = constants.API.API_URL;
-  const token = constants.AUTH.token;
+class VenuesContainer extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-  $.ajax({
-    url: api_rul + 'admins-venues',
-    dataType: 'json',
-    type: 'GET',
-    cache: false,
-    headers: {
-      "Authorization": "Basic " + token
-    },
-    success: function(data) {
-      this.setState({venues: data});
-      console.log("data: ", data);
-      browserHistory.push('/venues');
-    }.bind(this),
-    error: function(xhr, status, err) {
-      browserHistory.push('/');
-      console.error(`${api_rul}admins/authenticate`, status, err.toString());
-    }.bind(this)
-  });
+  componentDidMount() {
+    const { dispatch } = this.props
+    dispatch(fetchVenuesIfNeeded())
+  }
 
-}
+  // componentWillReceiveProps(nextProps) {
+  //   const { dispatch } = nextProps
+  //   dispatch(fetchVenuesIfNeeded())
+  // }
 
-const mapStateToProps = (state) => {
-  return {
-    venues: getVenues(state.venues)
+  render() {
+    const { venues, isFetching, lastUpdated } = this.props
+    return (
+      <div>
+        <p>{venues.length}</p>
+        <p>{isFetching}</p>
+        {isFetching && venues.length === 0 &&
+          <h2>Loading...</h2>
+        }
+        {!isFetching && venues.length === 0 &&
+          <h2>Empty.</h2>
+        }
+        {venues.length > 0 &&
+          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+            <Venues venues={venues} />
+          </div>
+        }
+      </div>
+    )
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     onEditClick: (id) => {
-//       dispatch(editVenue(id))
-//     }
-//   }
-// }
-
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(actions, dispatch);
+VenuesContainer.propTypes = {
+  venues: PropTypes.array.isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  lastUpdated: PropTypes.number,
+  dispatch: PropTypes.func.isRequired
 }
 
+function mapStateToProps(state) {
+  const { getVenues } = state;
+  const venues = state.venues;
+  const { isFetching, lastUpdated } = getVenues || { isFetching: true, lastUpdated: Date.now() };
+  
+  return {
+    venues,
+    isFetching,
+    lastUpdated
+  }
+}
 
-const VenuesContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(VenueList)
-
-export default VenuesContainer
+export default connect(mapStateToProps)(VenuesContainer)

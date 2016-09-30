@@ -9,8 +9,6 @@ import Login from './components/Login'
 import { Provider } from 'react-redux';
 import store, { history } from './store';
 
-console.log('store: ', JSON.stringify(store));
-
 module.exports = (
   <Provider store={store}>
     <Router history={history}>

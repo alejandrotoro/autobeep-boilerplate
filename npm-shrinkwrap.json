@@ -172,6 +172,11 @@
       "from": "aws4@>=1.2.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/aws4/-/aws4-1.4.1.tgz"
     },
+    "axios": {
+      "version": "0.14.0",
+      "from": "axios@latest",
+      "resolved": "http://registry.npmjs.org/axios/-/axios-0.14.0.tgz"
+    },
     "babel-code-frame": {
       "version": "6.11.0",
       "from": "babel-code-frame@>=6.8.0 <7.0.0",
@@ -1192,6 +1197,11 @@
       "version": "0.2.2",
       "from": "flux-constants@latest",
       "resolved": "http://registry.npmjs.org/flux-constants/-/flux-constants-0.2.2.tgz"
+    },
+    "follow-redirects": {
+      "version": "0.0.7",
+      "from": "follow-redirects@0.0.7",
+      "resolved": "http://registry.npmjs.org/follow-redirects/-/follow-redirects-0.0.7.tgz"
     },
     "for-in": {
       "version": "0.1.5",
@@ -3508,6 +3518,11 @@
           "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-1.1.14.tgz"
         }
       }
+    },
+    "stream-consume": {
+      "version": "0.1.0",
+      "from": "stream-consume@>=0.1.0 <0.2.0",
+      "resolved": "http://registry.npmjs.org/stream-consume/-/stream-consume-0.1.0.tgz"
     },
     "strict-uri-encode": {
       "version": "1.1.0",
