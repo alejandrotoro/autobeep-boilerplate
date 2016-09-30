@@ -5,16 +5,24 @@ import Login from './Login'
 
 const App = (props) => {
   return (
-    <div className="App">
-      <div className="header">
-        <h2 className="brand-name">Admins</h2>
-        <ul role="nav" className="header-links">
-          <li><Link to="/register">Registro</Link></li>
-          <li><Link to="/venues">Lugares</Link></li>
-          <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
-        </ul>
+    <div className=''>
+      <div className="navbar navbar-default navbar-fixed-top">
+        <div className='container'>
+          <div className="navbar-header">
+            <Link to='/' className="navbar-brand">Autobeep</Link>
+          </div>
+          <div className='navbar-collapse collapse' id='navbar-main'>
+            <ul role="nav" className="nav navbar-nav navbar-right">
+              <li><Link to="/register">Registro</Link></li>
+              <li><Link to="/venues">Lugares</Link></li>
+              <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      {cloneElement(props.children || <Login/>, props)}
+      <div className='container margin-header'>
+        {cloneElement(props.children || <Login/>, props)}
+      </div>
     </div>
   );
 }
