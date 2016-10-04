@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { fetchVenuesIfNeeded } from '../actions'
 import Venues from './Venues'
+import { Link } from 'react-router'
 
 class VenuesContainer extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class VenuesContainer extends Component {
     const { venues, isFetching, lastUpdated } = this.props
     return (
       <div>
+        <Link to='/new-venue' className="btn btn-info">Crear lugar</Link>
         {isFetching && venues.length === 0 &&
           <h2>Loading...</h2>
         }

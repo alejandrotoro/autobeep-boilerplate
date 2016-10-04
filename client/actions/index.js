@@ -12,6 +12,18 @@ export function editVenue(index) {
   return { type: EDIT_VENUE, index }
 }
 
+
+/* Add Venues */
+export const ADD_VENUE = 'ADD_VENUE'
+
+export function addVenue(venue, venues) {
+  return {
+    type: ADD_VENUE,
+    venues: venues.push(venue),
+    receivedAt: Date.now()
+  }
+}
+
 /* Request the venues */
 export const REQUEST_VENUES = 'REQUEST_VENUES'
 

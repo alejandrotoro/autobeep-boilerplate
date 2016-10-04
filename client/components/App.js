@@ -13,7 +13,7 @@ const App = (props) => {
           </div>
           <div className='navbar-collapse collapse' id='navbar-main'>
             <ul role="nav" className="nav navbar-nav navbar-right">
-              <li><Link to="/register">Registro</Link></li>
+              <li><Link to="/new-venue">Crear lugar</Link></li>
               <li><Link to="/venues">Lugares</Link></li>
               <li><NavLink to="/" onlyActiveOnIndex={true}>Home</NavLink></li>
             </ul>
