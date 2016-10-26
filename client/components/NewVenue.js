@@ -3,7 +3,6 @@ import { browserHistory } from 'react-router'
 import constants from './constants'
 
 const api_rul = constants.API.API_URL;
-const token = constants.AUTH.token;
 
 const NewVenue = React.createClass({
   getInitialState: function() {
@@ -35,6 +34,7 @@ const NewVenue = React.createClass({
     const city = this.state.city.trim();
     const country = this.state.country.trim();
     const phonenumber = this.state.phonenumber.trim();
+    const token = constants.AUTH.token;
 
     if (!name || !address) {
       console.log("Nunca entra por aqui =========");

@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 import { post, get } from 'axios';
 import constants from '../components/constants'
 
-const api_rul = constants.API.API_URL;
+const api_url = constants.API.API_URL;
 
 /*
  * action creators
@@ -58,7 +58,7 @@ function fetchVenues() {
   return dispatch => {
     dispatch(requestVenues());
 	const token = constants.AUTH.token;
-    return get(`${api_rul}admin-venues`, {headers: {
+    return get(`${api_url}admin-venues`, {headers: {
         'Authorization': token }
       })
       .then(responseData => dispatch(receiveVenues(responseData.data)))
