@@ -26,3 +26,5 @@ That includes:
 First `npm install` to grab all the necessary dependencies.
 
 Then run `npm run start` and open <localhost:3000> in your browser.
+
+Then run the tests with `npm tests` or with `npm tests -- -u` to remove the old snapshots.
