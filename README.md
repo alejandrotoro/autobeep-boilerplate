@@ -1,6 +1,6 @@
 # Autobeep Boilerplate
 
-Autobeep Boilerplate is based on the Android Application that has the same name.
+Autobeep is based on the Android Application that has the same name.
 
 [AndroidApp](https://play.google.com/store/apps/details?id=com.ionicframework.autobeep343650)
 
