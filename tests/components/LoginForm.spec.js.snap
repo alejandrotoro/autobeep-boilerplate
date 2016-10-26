@@ -1,0 +1,61 @@
+exports[`LoginForm renders correctly`] = `
+<div
+  className="row">
+  <form
+    className="adminLoginForm form-horizontal"
+    onSubmit={[Function bound handleSubmit]}>
+    <fieldset>
+      <legend>
+        Inicio de Sesión
+      </legend>
+      <div
+        className="form-group">
+        <label
+          className="col-lg-2 control-label"
+          htmlFor="inputEmail">
+          Email
+        </label>
+        <div
+          className="col-lg-10">
+          <input
+            className="form-control"
+            id="inputEmail"
+            onChange={[Function bound handleEmailChange]}
+            placeholder="Email"
+            type="email"
+            value="johndoe@a.com" />
+        </div>
+      </div>
+      <div
+        className="form-group">
+        <label
+          className="col-lg-2 control-label"
+          htmlFor="inputPassword">
+          Contraseña
+        </label>
+        <div
+          className="col-lg-10">
+          <input
+            className="form-control"
+            id="inputPassword"
+            onChange={[Function bound handlePasswordChange]}
+            placeholder="Contraseña"
+            type="password"
+            value="1234567890" />
+        </div>
+      </div>
+      <div
+        className="form-group">
+        <div
+          className="col-lg-10 col-lg-offset-2">
+          <button
+            className="btn btn-primary"
+            type="submit">
+            Iniciar Sesión
+          </button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+`;

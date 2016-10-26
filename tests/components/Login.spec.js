@@ -17,9 +17,9 @@ describe('<LoginForm />', () => {
   
   const defaultConfig = { config: { defaultTitle: 'AutobeepTest' } };
   const props = Object.assign(defaultConfig, {});
+  const component = shallow(<LoginForm {...props} />);
 
   describe('render', () => {
-    const component = shallow(<LoginForm {...props} />);
 
     it('match snapshot', () => {
       const snapshotFileName = path.join(__dirname, 'LoginForm.spec.js.snap');
@@ -50,7 +50,6 @@ describe('<LoginForm />', () => {
   });
 
   describe('handleEmailChange', () => {
-    const component = shallow(<LoginForm {...props} />);
     const target = { value: 'johndoe@a.com' };
     const changeEmailEvent = { preventDefault: sinon.spy(), target };
 
@@ -64,4 +63,20 @@ describe('<LoginForm />', () => {
       expect(component.state('email')).to.equal(target.value);
     });
   });
+
+  describe('handlePasswordChange', () => {
+    const target = { value: '1234567890' };
+    const changePasswordEvent = { preventDefault: sinon.spy(), target };
+
+    component.find('input[type="password"]').simulate('change', changePasswordEvent);
+
+    it('should call preventDefault', () => {
+      expect(changePasswordEvent.preventDefault.calledOnce).to.be.true();
+    });
+
+    it('should add password value to the state', () => {
+      expect(component.state('password')).to.equal(target.value);
+    });
+  });
+
 });

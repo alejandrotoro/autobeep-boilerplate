@@ -64,6 +64,7 @@
     "eslint": "https://registry.npmjs.org/eslint/-/eslint-3.5.0.tgz",
     "eslint-plugin-babel": "https://registry.npmjs.org/eslint-plugin-babel/-/eslint-plugin-babel-3.3.0.tgz",
     "eslint-plugin-react": "https://registry.npmjs.org/eslint-plugin-react/-/eslint-plugin-react-6.2.0.tgz",
+    "immutable": "https://registry.npmjs.org/immutable/-/immutable-3.8.1.tgz",
     "jest": "^16.0.2",
     "react-addons-test-utils": "^15.3.2",
     "sinon": "^1.17.6"
