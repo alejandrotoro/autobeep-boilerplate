@@ -9,9 +9,11 @@ const LoginForm = React.createClass({
     return {email: '', password: ''};
   },
   handleEmailChange: function(e) {
+    e.preventDefault();
     this.setState({email: e.target.value});
   },
   handlePasswordChange: function(e) {
+    e.preventDefault();
     this.setState({password: e.target.value});
   },
   handleSubmit: function(e) {
